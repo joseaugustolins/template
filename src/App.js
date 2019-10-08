@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom'
 
-function App() {
+import Dominio01 from './dominio01/Dominio01';
+import Home from './Home';
+import Informacao from './Informacao';
+import React from 'react';
+import SegundoDominio from './SegundoDominio/SegundoDominio';
+
+function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">      
+            <BrowserRouter>
+              <Route exact path="/" component={Home} />
+              <Route path="/dominio01" component={Dominio01} />
+              <Route path="/segundodominio" component={SegundoDominio} />
+              <Route path="/informacoes" component={Informacao} />
+            </BrowserRouter>
+            
     </div>
   );
 }
